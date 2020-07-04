@@ -1,5 +1,6 @@
-from QAgent import *
-from TrainingQAgent import *
+from src import QAgent
+from src import TrainingQAgent
+import csv
 
 def runAgent(QAInstrument, file):
 
@@ -31,7 +32,6 @@ def runAgent(QAInstrument, file):
     print('Nota predetta Tenore:' + pred_note_T)
     print('Nota predetta Basso:' + pred_note_B)
     '''
-
 
 QASoprano = QAgent('Soprano')
 QAAlto = QAgent('Alto')
@@ -65,3 +65,5 @@ print('Nota con max accurancy Tenore:')
 print(get_max_note(QATenore))
 print('Nota con max accurancy Basso:')
 print(get_max_note(QABasso))
+
+
