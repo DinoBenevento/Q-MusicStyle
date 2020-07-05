@@ -1,6 +1,5 @@
-from src import QAgent
-from src import TrainingQAgent
-import csv
+from QAgent import *
+from TrainingQAgent import *
 
 def runAgent(QAInstrument, file):
 
@@ -13,7 +12,7 @@ def runAgent(QAInstrument, file):
                 line_count += 1
             else:
                 chord = row[0]
-                training(QAInstrument.instrument, chord, 10000, QAInstrument)
+                training(QAInstrument.instrument, chord, 1000, QAInstrument)
 
 
 
@@ -32,6 +31,7 @@ def runAgent(QAInstrument, file):
     print('Nota predetta Tenore:' + pred_note_T)
     print('Nota predetta Basso:' + pred_note_B)
     '''
+
 
 QASoprano = QAgent('Soprano')
 QAAlto = QAgent('Alto')
@@ -66,4 +66,24 @@ print(get_max_note(QATenore))
 print('Nota con max accurancy Basso:')
 print(get_max_note(QABasso))
 
+print('Soprano')
+print(QASoprano.Q[1])
+print(QASoprano.Q[2])
 
+print('Alto')
+print(QAAlto.Q[1])
+print(QAAlto.Q[2])
+
+print('Tenore')
+print(QATenore.Q[1])
+print(QATenore.Q[2])
+
+print('Basso')
+print(QABasso.Q[1])
+print(QABasso.Q[2])
+
+for i in range(10):
+    print(get_random_note(QASoprano))
+    print(get_random_note(QAAlto))
+    print(get_random_note(QATenore))
+    print(get_random_note(QABasso))

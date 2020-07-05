@@ -1,5 +1,6 @@
 import numpy as np
 import csv
+import random
 
 
 def training(instrument, chord, iterations, QAgent):
@@ -111,6 +112,13 @@ def get_max_note(QAgent):
 
     maxNote = QAgent.Q[1][QAgent.Q[2].index((max(QAgent.Q[2])))]
     return maxNote
+
+def get_random_note(QAgent):
+
+    rnd = random.randint(0, len(QAgent.Q[2]) - 1)
+    if QAgent.Q[2][rnd] > 0:
+        rndNote = QAgent.Q[1][rnd]
+    return rndNote
 
 
 
